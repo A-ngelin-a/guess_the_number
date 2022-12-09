@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Угадай число</h1>
+    <p>Задано число от 1 до 10.</p>
+    <p>Дается 5 попыток, чтобы отгадать.</p>
+    <div>
+        <button onclick=GuessNum(1)>1</button>
+        <button onclick=GuessNum(2)>2</button>
+        <button onclick=GuessNum(3)>3</button>
+        <button onclick=GuessNum(4)>4</button>
+        <button onclick=GuessNum(5)>5</button>
+        <button onclick=GuessNum(6)>6</button>
+        <button onclick=GuessNum(7)>7</button>
+        <button onclick=GuessNum(8)>8</button>
+        <button onclick=GuessNum(9)>9</button>
+        <button onclick=GuessNum(10)>10</button>
+    </div>
+    <script>
+        const SecretNum = Math.ceil(Math.random() * 10) ;
+    let tries = 0;
+
+    function GuessNum(num) {
+    if (tries>=5) return alert("Игра окончена!");
+
+    if (num===SecretNum) {
+        alert("Вы угадали!")
+        tries=5;
+    } else {
+        alert("Вы не угадали!")
+        tries++;
+    }
+    }
+    </script>
+</body>
+</html>
